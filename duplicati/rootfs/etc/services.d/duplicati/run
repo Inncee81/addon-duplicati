@@ -5,5 +5,6 @@
 
 
 bashio::log.info "Starting Duplicati..."
-
-#exec php-fpm7 --nodaemonize -R
+cd /app/duplicati || exit
+exec mono Duplicati.Server.exe \
+	--webservice-interface=any --server-datafolder=/data --webservice-allowed-hostnames=*
