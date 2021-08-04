@@ -6,14 +6,6 @@
   "url": "https://github.com/elcajon/addon-duplicati",
   "init": false,
   "arch": ["aarch64", "amd64"],
-  "options": {
-    "reset_database": false,
-    "trusted_domains": []
-  },
-  "schema": {
-    "reset_database": "bool",
-    "trusted_domains": ["str"]
-  },
   "map": [
     "config:rw",
     "ssl:rw",
@@ -26,7 +18,7 @@
     "8200/tcp": null
   },
   "ports_description": {
-    "8200/tcp": "Duplicati web interface"
+    "8200/tcp": "Duplicati web interface (not required, ingress)"
   },
   "ingress": true,
   "ingress_port": 8200
