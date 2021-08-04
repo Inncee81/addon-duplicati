@@ -23,6 +23,7 @@ RUN \
      software-properties-common \
      dirmngr \
      jq \
+     unzip \
      && \
     echo "**** install duplicati ****" && \
     if [ -z ${DUPLICATI_RELEASE+x} ]; then \
