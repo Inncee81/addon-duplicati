@@ -28,6 +28,6 @@
   "ports_description": {
     "8200/tcp": "Duplicati web interface"
   },
-  "ingress" : true,
-  "ingress_port" : 8200
+  "ingress": true,
+  "ingress_port": 8200
 }
