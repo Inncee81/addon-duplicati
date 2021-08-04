@@ -18,7 +18,7 @@ Duplicati add-on for Home Assistant.
 
 ## About
 
-This is an duplicati add-on for Home Assistant.
+This is an duplicati add-on for Home Assistant for creating server backups.
 
 [:books: Read the full add-on documentation][docs]
 
