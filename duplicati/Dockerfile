@@ -1,9 +1,45 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/aarch64:10.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/ubuntu-base/aarch64:6.2.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 # Copy root filesystem
 COPY rootfs /
+
+ARG DUPLICATI_RELEASE=v2.0.6.3-2.0.6.3_beta_2021-06-17
+
+RUN \
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
+    && echo"deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | \
+    sudo tee /etc/apt/sources.list.d/mono-official-stable.list \
+    && apt update \
+    && apt install -y \
+     mono-devel \
+     gtk-sharp2 \
+     apt-transport-https \
+     nano \
+     git-core \
+     software-properties-common \
+     dirmngr \
+     jq \
+     && \
+    echo "**** install duplicati ****" && \
+    if [ -z ${DUPLICATI_RELEASE+x} ]; then \
+        DUPLICATI_RELEASE=$(curl -sX GET "https://api.github.com/repos/duplicati/duplicati/releases" \
+        | jq -r 'first(.[] | select(.tag_name | contains("beta"))) | .tag_name'); \
+    fi && \
+    mkdir -p \
+        /app/duplicati && \
+    duplicati_url=$(curl -s https://api.github.com/repos/duplicati/duplicati/releases/tags/"${DUPLICATI_RELEASE}" |jq -r '.assets[].browser_download_url' |grep zip |grep -v signatures) && \
+    curl -o \
+    /tmp/duplicati.zip -L \
+        "${duplicati_url}" && \
+    unzip -q /tmp/duplicati.zip -d /app/duplicati && \
+    echo "**** cleanup ****" && \
+    rm -rf \
+        /tmp/* \
+        /var/lib/apt/lists/* \
+        /var/tmp/*
+
 
 # Build arguments
 ARG BUILD_ARCH
