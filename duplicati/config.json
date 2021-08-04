@@ -26,6 +26,6 @@
     "8200/tcp": null
   },
   "ports_description": {
-    "8200/tcp": "Duplicati Web Port"
+    "8200/tcp": "Duplicati web interface"
   }
 }
