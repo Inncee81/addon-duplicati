@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Nextcloud
+# Home Assistant Add-on: Duplicati
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
