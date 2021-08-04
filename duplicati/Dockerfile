@@ -12,7 +12,7 @@ RUN \
     && echo"deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | \
     tee /etc/apt/sources.list.d/mono-official-stable.list \
     && apt-get update \
-    && apt-get install -y \
+    && apt-get install --no-install-recommends -y \
      mono-devel \
      gtk-sharp2 \
      apt-transport-https \
