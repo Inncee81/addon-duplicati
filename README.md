@@ -51,7 +51,7 @@ SOFTWARE.
 [commits-shield]: https://img.shields.io/github/commit-activity/y/elcajon/addon-duplicati.svg
 [commits]: https://github.com/elcajon/addon-duplicati/commits/main
 [contributors]: https://github.com/elcajon/addon-duplicati/graphs/contributors
-[docs]: https://github.com/elcajon/addon-duplicati/blob/main/nextcloud/DOCS.md
+[docs]: https://github.com/elcajon/addon-duplicati/blob/main/duplicati/DOCS.md
 [github-actions-shield]: https://github.com/elcajon/addon-duplicati/workflows/CI/badge.svg
 [github-actions]: https://github.com/elcajon/addon-duplicati/actions
 [i386-shield]: https://img.shields.io/badge/i386-no-red.svg
