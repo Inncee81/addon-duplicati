@@ -21,5 +21,6 @@
     "8200/tcp": "Duplicati web interface (not required, ingress)"
   },
   "ingress": true,
-  "ingress_port": 8200
+  "ingress_port": 8200,
+  "panel_icon": "mdi:cloud-upload-outline"
 }
