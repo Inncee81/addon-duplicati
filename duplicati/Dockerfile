@@ -5,7 +5,7 @@ FROM ${BUILD_FROM}
 # Copy root filesystem
 COPY rootfs /
 
-ARG DUPLICATI_RELEASE=v2.0.6.3-2.0.6.3_beta_2021-06-17
+ARG DUPLICATI_RELEASE=v2.0.6.100-2.0.6.100_canary_2021-08-11
 
 RUN \
     apt-get update \
